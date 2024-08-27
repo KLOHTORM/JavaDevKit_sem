@@ -18,9 +18,9 @@ public class Map extends JPanel {
     private static final int STATE_WIN_AI = 2;
     private static final int STATE_DRAW = 3;
 
-    private static final String MSG_WIN_HUMAN = "Победил игрок!";
-    private static final String MSG_WIN_AI = "Победил компьютер!";
-    private static final String MSG_DRAW = "Ничья!";
+    private static final String MSG_WIN_HUMAN = "Human winner!";
+    private static final String MSG_WIN_AI = "Ai winner!";
+    private static final String MSG_DRAW = "Dead Heat!";
 
     private int width, height, cellWidth, cellHeight;
     private int mode, fieldSizeX, fieldSizeY, winLen;
@@ -200,8 +200,8 @@ public class Map extends JPanel {
         g.setFont(new Font("Times new roman", Font.BOLD, 48));
         switch (gameStateType){
             case STATE_DRAW -> g.drawString(MSG_DRAW, 180, getHeight() / 2 + 60);
-            case STATE_WIN_HUMAN -> g.drawString(MSG_WIN_HUMAN, 20, getHeight() / 2 + 60);
-            case STATE_WIN_AI -> g.drawString(MSG_WIN_AI, 70, getHeight() / 2 + 60);
+            case STATE_WIN_HUMAN -> g.drawString(MSG_WIN_HUMAN, 120, getHeight() / 2 + 60);
+            case STATE_WIN_AI -> g.drawString(MSG_WIN_AI, 150, getHeight() / 2 + 60);
             default -> throw new RuntimeException("Unchecked gameOverState: " + gameStateType);
         }
         gameWork = false;
